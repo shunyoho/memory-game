@@ -68,13 +68,20 @@ shuffle($items);
   </style>
   <body>
     <h1>記憶大考驗</h1>
+    <div>
+    <button type="button" onclick="location.href='index.php';"><h2>回主選單</h2></button>
+    &nbsp;
+    <button type="button" onclick="location.reload();"><h2>重啟</h2></button>
+    </div>
     <section class="memory-game">
       <?php for ($i=0; $i < $config[$_GET['mode']]['item']['num']; $i++) { ?>
-      <div class="memory-card" data-framework="<?php echo $item[$i]; ?>">
+      <div class="memory-card" data-framework="<?php echo $items[$i]; ?>">
         <div class="front-face">
           <img src="img/items/<?php echo $items[$i]; ?>.png" alt="<?php echo $items[$i]; ?>" />
         </div>
-        <img class="back-face" src="img/js-badge.svg" alt="Memory Card" />
+        <div class="back-face">
+          <img src="img/js-badge.svg" width="100%" height="100%" alt="Memory Card" />
+        </div>
       </div>
       <?php } ?>
     </section>
